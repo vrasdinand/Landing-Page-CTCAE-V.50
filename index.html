@@ -68,37 +68,38 @@
     </div>
     <!-- Main Section Start -->
     <div class="form-group">
-     <div class="col-6">
-      <label for="exampleSelect1" class="form-label mt-4">MedDRA SOC</label>
-      <select class="form-select form-select-lg" id="exampleSelect1">
+     <div class="col-8">
+      <label for="selectData1" class="form-label mt-4">MedDRA SOC</label>
+      <select class="form-select form-select-lg" id="selectData1">
         <option></option>
-        <option>Blood and lymphatic system disorders</option>
-        <option>Cardiac disorders</option>
-        <option>Ear and labyrinth disorders</option>
-        <option>Endocrine disorders/option>
-        <option>Eye disorders</option>
       </select>
+      <div id="selectedValues"></div>
+      </div>
+      <div class="col-6">
+      <label for="selectData2" class="form-label mt-4">CCTCAE Term</label>
+      <select class="form-select form-select-lg" id="selectData2" disabled>
+      </select>
+      <div id="selectedValues2"></div>
     </div>
       </div>
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <div class="col-6">
          <label for="exampleSelect2" class="form-label mt-4">CCTCAE Term</label>
-         <select class="form-select form-select-lg" id="exampleSelect1">
-           <option></option>
-           <option>Blood and lymphatic system disorders</option>
-           <option>Cardiac disorders</option>
-           <option>Ear and labyrinth disorders</option>
-           <option>Endocrine disorders/option>
-           <option>Eye disorders</option>
+         <select class="form-select form-select-lg" id="selectData1">
          </select>
+         <div id="selectedValue1"></div>
        </div>
-         </div>
+         </div> -->
       <div class="form-group">
        <div class="col-6">
-        <button type="submit" class="btn btn-primary mt-3">Search</button>
-    </div>
+        <button type="submit" class="btn btn-primary mt-3" onclick="filterTable()">Search</button>
+        <div class="spinner-border text-primary ml-2" role="status" id="loadingSpinner" style="display:none;">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
     <table class="table table-light mt-3">
+    <div class="col-12">
       <thead>
         <tr>
           <th scope="col">MedDRA code</th>
@@ -109,23 +110,19 @@
           <th scope="col">Grade 3</th>
           <th scope="col">Grade 4</th>
           <th scope="col">Grade 5</th>
+          <th scope="col">Definition</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="tableBody">
+        <div class="col-12">
         <tr class="table-light">
-          <th scope="row">0002272</th>
-          <td>Blood and lymphatic system disorders</td>
-          <td>Anemia</td>
-          <td>Hemoglobin (Hgb) <LLN- 10.0 g/dL; <LLN - 6.2 mmol/L; <LLN - 100 g/L</td>
-          <td>Hgb <10.0 - 8.0 g/dL; <6.2 - 4.9 mmol/L; <100 - 80g/L</td>
-          <td>Hgb <8.0 g/dL; <4.9 mmol/L; <80 g/L; transfusion indicated</td>
-          <td>Life-threatening consequences; urgent intervention indicated</td>
-          <td>Death</td>
         </tr>
       </tbody>
     </table>
     </div>
+    </div>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
   </body>
   </body>
     <!-- ======= Footer ======= -->
